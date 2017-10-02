@@ -1,3 +1,7 @@
+// Give Us All Your Money Bank - Clarence Cheng, Lynne Wang, Frank Chen
+//APCS pd 1
+//HW 09
+//2017-10-02
 public class BankAccount {
 
     //Instance Vars
@@ -16,7 +20,7 @@ public class BankAccount {
 	AccBal = 0.0;
     }
 
-    public BankAccount(String Name, String Pwd, int Pin, int Num, double Balance) {
+    public BankAccount(String Name, String Pwd, int Pin, int Num, float Balance) {
 	AccName = Name;
 	AccPwd = Pwd;
 	AccPin = Pin;
@@ -25,12 +29,12 @@ public class BankAccount {
     }
 
     //Methods
-    public void Deposit(double Amount) {
+    public void Deposit(float Amount) {
 	AccBal += Amount;
     }
 
     //Work on withdrawal limit - if your withdrawal amount is greater than your account balance, print a message to the person.
-    public void Withdraw(double Amount) {
+    public void Withdraw(float Amount) {
 	AccBal -= Amount;
     }
 
