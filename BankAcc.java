@@ -1,4 +1,4 @@
-public class BankAcc {
+public class BankAccount {
 
     //Instance Vars
     private String AccName;
@@ -8,7 +8,7 @@ public class BankAcc {
     private double AccBal;
 
     //Constructors
-    public BankAcc() {
+    public BankAccount() {
 	AccName = "Default";
 	AccPwd = "000aaa";
 	AccPin = 0000;
@@ -16,7 +16,7 @@ public class BankAcc {
 	AccBal = 0.0;
     }
 
-    public BankAcc(String Name, String Pwd, int Pin, int Num, double Balance) {
+    public BankAccount(String Name, String Pwd, int Pin, int Num, double Balance) {
 	AccName = Name;
 	AccPwd = Pwd;
 	AccPin = Pin;
