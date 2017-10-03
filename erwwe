@@ -32,6 +32,7 @@ public class BankAccount {
     }
 
     //Main Function - Each attribute is set by the overloaded constructor.
+    //Prints out account info
     public static void main( String[] args ) {
 	BankAccount testAcc = new BankAccount("Lynne","1234qwer",1111,111111111,1000.0);
 	testAcc.Deposit(45);
