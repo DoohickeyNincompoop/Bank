@@ -21,7 +21,7 @@ public class BankAccount {
 	AccBal = 0;
     }
 
-    //Overloaded Constructor
+    //Overloaded Constructor - Values can be entered for each attribute in the main function.
     public BankAccount(String Name, String Pwd, int Pin, int Num, double Balance) {
 	AccName = Name;
 	AccPwd = Pwd;
@@ -30,7 +30,7 @@ public class BankAccount {
 	AccBal = Balance;
     }
 
-    //Main Function
+    //Main Function - Each attribute is set by the overloaded constructor.
     public static void main( String[] args ) {
 	BankAccount testAcc = new BankAccount("Lynne","1234qwer",1111,111111111,1000.0);
 	testAcc.Deposit(45);
