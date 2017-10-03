@@ -1,4 +1,4 @@
-	// Give Us All Your Money Bank - Clarence Cheng, Lynne Wang, Frank Chen
+//Give Us All Your Money Bank - Lynne Wang, Clarence Cheng, Frank Chen
 //APCS pd 1
 //HW 09
 //2017-10-02
@@ -6,12 +6,13 @@ public class BankAccount {
 
     //Instance Vars
     private String AccName;
-    private String  AccPwd;
+    private String AccPwd;
     private int AccPin;
     private int AccNum;
-    private float AccBal;
+    private double AccBal;
 
     //Constructors
+    //Default Constructor
     public BankAccount() {
 	AccName = "Default";
 	AccPwd = "000aaa";
@@ -19,17 +20,9 @@ public class BankAccount {
 	AccNum = 000000000;
 	AccBal = 0;
     }
-public static void main( String[] args ) {
-    	Deposit(45);
-	Withdraw(15);
-        System.out.println(retName());
-	System.out.println(retPwd());
-	System.out.println(testAcc.retPin());
-	System.out.println(retNum());
-	System.out.println(retBalance());
-	System.out.println("should be 1030");
-}
-    public BankAccount(String Name, String Pwd, int Pin, int Num, float Balance) {
+
+    //Overloaded Constructor
+    public BankAccount(String Name, String Pwd, int Pin, int Num, double Balance) {
 	AccName = Name;
 	AccPwd = Pwd;
 	AccPin = Pin;
@@ -37,16 +30,35 @@ public static void main( String[] args ) {
 	AccBal = Balance;
     }
 
+    //Main Function
+    public static void main( String[] args ) {
+	BankAccount testAcc = new BankAccount("Lynne","1234qwer",1111,111111111,1000.0);
+	testAcc.Deposit(45);
+	testAcc.Withdraw(15.01);
+        System.out.println("Account Holder: " + testAcc.retName());
+	System.out.println("Password: " + testAcc.retPwd());
+	System.out.println("4-Digit Pin: " + testAcc.retPin());
+	System.out.println("9-Digit Account Number: " + testAcc.retNum());
+	System.out.println("Balance: " + testAcc.retBalance());
+	//System.out.println("Self check: the balance should be 1029.99");
+    }
+    
     //Methods
-    public void Deposit(float Amount) {
+    public void Deposit(double Amount) {
 	AccBal += Amount;
     }
 
-    //Work on withdrawal limit - if your withdrawal amount is greater than your account balance, print a message to the person.
-    public void Withdraw(float Amount) {
-	AccBal -= Amount;
+    //If person attempts to withdraw more money than is currently in their bank account, they will withdraw all the money in their bank account only.
+    public void Withdraw(double Amount) {
+	if (Amount <= AccBal) {
+	    AccBal -= Amount;
+	}
+	else {
+	    AccBal -= AccBal;
+	}
     }
 
+    //Return values for variables in main function.
     public String retName() {
 	return AccName;
     }
@@ -62,8 +74,10 @@ public static void main( String[] args ) {
     public int retNum() {
 	return AccNum;
     }
-    
-    
-}
+
+    public double retBalance() {
+	return AccBal;
+    }
 
 }
+
