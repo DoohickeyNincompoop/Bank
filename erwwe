@@ -22,6 +22,7 @@ public class BankAccount {
     }
 
     //Overloaded Constructor - Values can be entered for each attribute in the main function.
+    //Double is used instead of float because Java uses double by default to represent floating-point numbers.
     public BankAccount(String Name, String Pwd, int Pin, int Num, double Balance) {
 	AccName = Name;
 	AccPwd = Pwd;
